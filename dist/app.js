@@ -2,7 +2,7 @@ const zoneColors = { A: "#0b8a91", B: "#bf7c43", C: "#4b9d6b" };
 const zoneDistance = { A: "0–4 km", B: "4–8 km", C: "> 8 km" };
 const dateOrder = ["20250331", "20251002", "20251201"];
 let selectedDate = "20251201";
-let selectedLayer = "ndti";
+let selectedLayer = "truecolor";
 let rasterOverlay;
 let chart;
 let hydroChart;

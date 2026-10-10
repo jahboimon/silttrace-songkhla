@@ -1,0 +1,1602 @@
+{
+  "bounds": [
+    [
+      7.129342796680787,
+      100.38276820235559
+    ],
+    [
+      7.257611862044134,
+      100.56463334794232
+    ]
+  ],
+  "layers": {
+    "20250331": {
+      "truecolor": "assets/rasters/truecolor_20250331.png",
+      "ndti": "assets/rasters/ndti_20250331.png",
+      "ndti_values": "assets/rasters/ndti_values_20250331.png",
+      "uwqv": "assets/rasters/uwqv_20250331.png"
+    },
+    "20251002": {
+      "truecolor": "assets/rasters/truecolor_20251002.png",
+      "ndti": "assets/rasters/ndti_20251002.png",
+      "ndti_values": "assets/rasters/ndti_values_20251002.png",
+      "uwqv": "assets/rasters/uwqv_20251002.png"
+    },
+    "20251201": {
+      "truecolor": "assets/rasters/truecolor_20251201.png",
+      "ndti": "assets/rasters/ndti_20251201.png",
+      "ndti_values": "assets/rasters/ndti_values_20251201.png",
+      "uwqv": "assets/rasters/uwqv_20251201.png"
+    }
+  },
+  "dates": {
+    "20250331": {
+      "label": "31 มี.ค. 2568",
+      "stage": "ช่วงฤดูแล้ง"
+    },
+    "20251002": {
+      "label": "2 ต.ค. 2568",
+      "stage": "ช่วงฤดูฝน"
+    },
+    "20251201": {
+      "label": "1 ธ.ค. 2568",
+      "stage": "หลังอุทกภัย"
+    }
+  },
+  "zonal": [
+    {
+      "date": 20250331,
+      "zone": "A",
+      "distance": "0-4 km",
+      "pixel_count": 62979,
+      "water_area_km2": 25.1916,
+      "median": -0.0729288235306739,
+      "q1": -0.0880334228277206,
+      "q3": -0.0596159026026725,
+      "iqr": 0.028417520225048,
+      "mean": -0.0723734572529792,
+      "std": 0.0251578073948621
+    },
+    {
+      "date": 20250331,
+      "zone": "B",
+      "distance": "4-8 km",
+      "pixel_count": 121740,
+      "water_area_km2": 48.696,
+      "median": -0.0434501692652702,
+      "q1": -0.0693585127592086,
+      "q3": -0.0295273847877979,
+      "iqr": 0.0398311279714107,
+      "mean": -0.0501667633652687,
+      "std": 0.0281704999506473
+    },
+    {
+      "date": 20250331,
+      "zone": "C",
+      "distance": ">8 km within AOI",
+      "pixel_count": 81514,
+      "water_area_km2": 32.6056,
+      "median": -0.0410085394978523,
+      "q1": -0.0742182806134224,
+      "q3": -0.024828603491187,
+      "iqr": 0.0493896752595901,
+      "mean": -0.0501365512609481,
+      "std": 0.0352017097175121
+    },
+    {
+      "date": 20251002,
+      "zone": "A",
+      "distance": "0-4 km",
+      "pixel_count": 62979,
+      "water_area_km2": 25.1916,
+      "median": -0.2740926146507263,
+      "q1": -0.2939890623092651,
+      "q3": -0.2459016442298889,
+      "iqr": 0.0480874180793762,
+      "mean": -0.2522166073322296,
+      "std": 0.0690785869956016
+    },
+    {
+      "date": 20251002,
+      "zone": "B",
+      "distance": "4-8 km",
+      "pixel_count": 121740,
+      "water_area_km2": 48.696,
+      "median": -0.2927461266517639,
+      "q1": -0.3357865810394287,
+      "q3": -0.1434127390384674,
+      "iqr": 0.1923738420009613,
+      "mean": -0.2520175874233246,
+      "std": 0.1124659851193428
+    },
+    {
+      "date": 20251002,
+      "zone": "C",
+      "distance": ">8 km within AOI",
+      "pixel_count": 81514,
+      "water_area_km2": 32.6056,
+      "median": -0.2372570037841797,
+      "q1": -0.3329004943370819,
+      "q3": -0.1008380427956581,
+      "iqr": 0.2320624589920044,
+      "mean": -0.2221041470766067,
+      "std": 0.1175469830632209
+    },
+    {
+      "date": 20251201,
+      "zone": "A",
+      "distance": "0-4 km",
+      "pixel_count": 62979,
+      "water_area_km2": 25.1916,
+      "median": 0.014401676133275,
+      "q1": -0.0543751567602157,
+      "q3": 0.0368371531367301,
+      "iqr": 0.0912123098969459,
+      "mean": 0.0027017935644835,
+      "std": 0.0518234260380268
+    },
+    {
+      "date": 20251201,
+      "zone": "B",
+      "distance": "4-8 km",
+      "pixel_count": 121740,
+      "water_area_km2": 48.696,
+      "median": -0.0933004543185234,
+      "q1": -0.1258120536804199,
+      "q3": -0.0383848398923873,
+      "iqr": 0.0874272137880325,
+      "mean": -0.073465421795845,
+      "std": 0.0693595930933952
+    },
+    {
+      "date": 20251201,
+      "zone": "C",
+      "distance": ">8 km within AOI",
+      "pixel_count": 81514,
+      "water_area_km2": 32.6056,
+      "median": -0.1620370298624038,
+      "q1": -0.1816789954900741,
+      "q3": -0.1058363020420074,
+      "iqr": 0.0758426934480667,
+      "mean": -0.1325334012508392,
+      "std": 0.0699570775032043
+    }
+  ],
+  "delta": [
+    {
+      "period": "20250331_to_20251002",
+      "zone": "A",
+      "distance": "0-4 km",
+      "pixel_count": 62979,
+      "water_area_km2": 25.1916,
+      "median": -0.1971739828586578,
+      "q1": -0.2154528200626373,
+      "q3": -0.1708576381206512,
+      "iqr": 0.044595181941986,
+      "mean": -0.1798431426286697,
+      "std": 0.0637162923812866
+    },
+    {
+      "period": "20250331_to_20251002",
+      "zone": "B",
+      "distance": "4-8 km",
+      "pixel_count": 121740,
+      "water_area_km2": 48.696,
+      "median": -0.2367775440216064,
+      "q1": -0.3037687540054321,
+      "q3": -0.0804120302200317,
+      "iqr": 0.2233567237854004,
+      "mean": -0.2018508166074752,
+      "std": 0.1254123449325561
+    },
+    {
+      "period": "20250331_to_20251002",
+      "zone": "C",
+      "distance": ">8 km within AOI",
+      "pixel_count": 81514,
+      "water_area_km2": 32.6056,
+      "median": -0.2002899646759033,
+      "q1": -0.3015629649162292,
+      "q3": -0.031604990363121,
+      "iqr": 0.269957959651947,
+      "mean": -0.1719676107168197,
+      "std": 0.1410549879074096
+    },
+    {
+      "period": "20251002_to_20251201",
+      "zone": "A",
+      "distance": "0-4 km",
+      "pixel_count": 62979,
+      "water_area_km2": 25.1916,
+      "median": 0.2584934830665588,
+      "q1": 0.2083921730518341,
+      "q3": 0.3137304782867431,
+      "iqr": 0.105338305234909,
+      "mean": 0.2549183964729309,
+      "std": 0.067146860063076
+    },
+    {
+      "period": "20251002_to_20251201",
+      "zone": "B",
+      "distance": "4-8 km",
+      "pixel_count": 121740,
+      "water_area_km2": 48.696,
+      "median": 0.1963201016187667,
+      "q1": 0.139881819486618,
+      "q3": 0.2312222421169281,
+      "iqr": 0.09134042263031,
+      "mean": 0.1785521656274795,
+      "std": 0.0755222216248512
+    },
+    {
+      "period": "20251002_to_20251201",
+      "zone": "C",
+      "distance": ">8 km within AOI",
+      "pixel_count": 81514,
+      "water_area_km2": 32.6056,
+      "median": 0.1228054165840148,
+      "q1": -0.02896274253726,
+      "q3": 0.1793586760759353,
+      "iqr": 0.2083214223384857,
+      "mean": 0.0895707532763481,
+      "std": 0.1183062717318534
+    }
+  ],
+  "hydro": [
+    {
+      "station_code": "ONE037",
+      "station_name": "สะพานข้ามคลองอู่ตะเภา",
+      "latitude": 7.134991,
+      "longitude": 100.45319,
+      "acquisition_date": "2025-03-31",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 0.8,
+      "water_level_min": 0.14,
+      "water_level_median": 0.28,
+      "water_level_mean": 0.28528,
+      "water_level_max": 0.44,
+      "water_level_coverage_pct": 86.80555555555556
+    },
+    {
+      "station_code": "ONE037",
+      "station_name": "สะพานข้ามคลองอู่ตะเภา",
+      "latitude": 7.134991,
+      "longitude": 100.45319,
+      "acquisition_date": "2025-10-02",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 2.2,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 2.2,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 24.2,
+      "water_level_min": 0.05,
+      "water_level_median": 0.18,
+      "water_level_mean": 0.1548484848484848,
+      "water_level_max": 0.25,
+      "water_level_coverage_pct": 91.66666666666669
+    },
+    {
+      "station_code": "ONE037",
+      "station_name": "สะพานข้ามคลองอู่ตะเภา",
+      "latitude": 7.134991,
+      "longitude": 100.45319,
+      "acquisition_date": "2025-12-01",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 214.2,
+      "water_level_min": 1.04,
+      "water_level_median": 1.09,
+      "water_level_mean": 1.1026573426573427,
+      "water_level_max": 1.18,
+      "water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "ONE038",
+      "station_name": "สะพานสวนเฉลิมพระเกียรติ 72 พรรษามหาราชินี",
+      "latitude": 7.18275,
+      "longitude": 100.594505,
+      "acquisition_date": "2025-03-31",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 2.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 51.2,
+      "water_level_min": 0.06,
+      "water_level_median": 0.27,
+      "water_level_mean": 0.2624475524475524,
+      "water_level_max": 0.45,
+      "water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "ONE038",
+      "station_name": "สะพานสวนเฉลิมพระเกียรติ 72 พรรษามหาราชินี",
+      "latitude": 7.18275,
+      "longitude": 100.594505,
+      "acquisition_date": "2025-10-02",
+      "rainfall_1d_valid_days": 0,
+      "rainfall_1d_coverage_pct": 0.0,
+      "rainfall_1d_mm": null,
+      "rainfall_3d_valid_days": 0,
+      "rainfall_3d_coverage_pct": 0.0,
+      "rainfall_3d_mm": null,
+      "rainfall_7d_valid_days": 0,
+      "rainfall_7d_coverage_pct": 0.0,
+      "rainfall_7d_mm": null,
+      "water_level_min": null,
+      "water_level_median": null,
+      "water_level_mean": null,
+      "water_level_max": null,
+      "water_level_coverage_pct": 0.0
+    },
+    {
+      "station_code": "ONE038",
+      "station_name": "สะพานสวนเฉลิมพระเกียรติ 72 พรรษามหาราชินี",
+      "latitude": 7.18275,
+      "longitude": 100.594505,
+      "acquisition_date": "2025-12-01",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 219.2,
+      "water_level_min": 0.8,
+      "water_level_median": 0.92,
+      "water_level_mean": 0.9025,
+      "water_level_max": 0.99,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA001",
+      "station_name": "หาดใหญ่",
+      "latitude": 6.9801416,
+      "longitude": 100.46324,
+      "acquisition_date": "2025-03-31",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 1.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 2.4,
+      "water_level_min": 3.68,
+      "water_level_median": 3.92,
+      "water_level_mean": 3.930909090909091,
+      "water_level_max": 4.26,
+      "water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "SLA001",
+      "station_name": "หาดใหญ่",
+      "latitude": 6.9801416,
+      "longitude": 100.46324,
+      "acquisition_date": "2025-10-02",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 18.6,
+      "water_level_min": 2.56,
+      "water_level_median": 2.78,
+      "water_level_mean": 2.7577777777777777,
+      "water_level_max": 2.96,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA001",
+      "station_name": "หาดใหญ่",
+      "latitude": 6.9801416,
+      "longitude": 100.46324,
+      "acquisition_date": "2025-12-01",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 5,
+      "rainfall_7d_coverage_pct": 71.42857142857143,
+      "rainfall_7d_mm": null,
+      "water_level_min": 3.24,
+      "water_level_median": 3.92,
+      "water_level_mean": 3.752323943661972,
+      "water_level_max": 4.18,
+      "water_level_coverage_pct": 98.61111111111111
+    },
+    {
+      "station_code": "SLA002",
+      "station_name": "คลองหอยโข่ง",
+      "latitude": 6.9312353,
+      "longitude": 100.43985,
+      "acquisition_date": "2025-03-31",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 1.2000000000000002,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 23.0,
+      "water_level_min": 3.38,
+      "water_level_median": 3.615,
+      "water_level_mean": 3.6225,
+      "water_level_max": 3.94,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA002",
+      "station_name": "คลองหอยโข่ง",
+      "latitude": 6.9312353,
+      "longitude": 100.43985,
+      "acquisition_date": "2025-10-02",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 0.0,
+      "water_level_min": 2.45,
+      "water_level_median": 2.58,
+      "water_level_mean": 2.576041666666667,
+      "water_level_max": 2.73,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA002",
+      "station_name": "คลองหอยโข่ง",
+      "latitude": 6.9312353,
+      "longitude": 100.43985,
+      "acquisition_date": "2025-12-01",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.2,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.2,
+      "rainfall_7d_valid_days": 5,
+      "rainfall_7d_coverage_pct": 71.42857142857143,
+      "rainfall_7d_mm": null,
+      "water_level_min": 4.46,
+      "water_level_median": 4.61,
+      "water_level_mean": 4.619370629370629,
+      "water_level_max": 4.93,
+      "water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "SLA007",
+      "station_name": "บางกล่ำ",
+      "latitude": 7.079437,
+      "longitude": 100.42788,
+      "acquisition_date": "2025-03-31",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 41.6,
+      "water_level_min": 0.15,
+      "water_level_median": 0.27,
+      "water_level_mean": 0.2738888888888888,
+      "water_level_max": 0.41,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA007",
+      "station_name": "บางกล่ำ",
+      "latitude": 7.079437,
+      "longitude": 100.42788,
+      "acquisition_date": "2025-10-02",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.2,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 2.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 26.8,
+      "water_level_min": 0.01,
+      "water_level_median": 0.135,
+      "water_level_mean": 0.1179166666666666,
+      "water_level_max": 0.21,
+      "water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA007",
+      "station_name": "บางกล่ำ",
+      "latitude": 7.079437,
+      "longitude": 100.42788,
+      "acquisition_date": "2025-12-01",
+      "rainfall_1d_valid_days": 1,
+      "rainfall_1d_coverage_pct": 100.0,
+      "rainfall_1d_mm": 0.0,
+      "rainfall_3d_valid_days": 3,
+      "rainfall_3d_coverage_pct": 100.0,
+      "rainfall_3d_mm": 0.0,
+      "rainfall_7d_valid_days": 7,
+      "rainfall_7d_coverage_pct": 100.0,
+      "rainfall_7d_mm": 148.8,
+      "water_level_min": 1.02,
+      "water_level_median": 1.06,
+      "water_level_mean": 1.0713194444444445,
+      "water_level_max": 1.15,
+      "water_level_coverage_pct": 100.0
+    }
+  ],
+  "flood_event": [
+    {
+      "station_code": "ONE037",
+      "station_name": "สะพานข้ามคลองอู่ตะเภา",
+      "latitude": 7.134991,
+      "longitude": 100.45319,
+      "rain_event_start": "2025-11-21",
+      "rain_event_end": "2025-11-25",
+      "rain_event_valid_days": 5,
+      "rain_event_coverage_pct": 100.0,
+      "rain_event_total_mm": 890.5999999999999,
+      "peak_daily_rainfall_mm": 359.6,
+      "peak_daily_rainfall_date": "2025-11-24",
+      "post_event_rain_valid_days": 5,
+      "post_event_rain_coverage_pct": 100.0,
+      "post_event_rain_total_mm": 16.4,
+      "water_event_start": "2025-11-21",
+      "water_event_end": "2025-11-27",
+      "water_event_valid_observations": 963,
+      "water_event_coverage_pct": 95.53571428571428,
+      "peak_water_level": 3.23,
+      "peak_water_datetime": "2025-11-25 08:00:00",
+      "dec1_water_level_median": 1.09,
+      "dec1_water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "ONE038",
+      "station_name": "สะพานสวนเฉลิมพระเกียรติ 72 พรรษามหาราชินี",
+      "latitude": 7.18275,
+      "longitude": 100.594505,
+      "rain_event_start": "2025-11-21",
+      "rain_event_end": "2025-11-25",
+      "rain_event_valid_days": 5,
+      "rain_event_coverage_pct": 100.0,
+      "rain_event_total_mm": 767.6,
+      "peak_daily_rainfall_mm": 294.0,
+      "peak_daily_rainfall_date": "2025-11-24",
+      "post_event_rain_valid_days": 5,
+      "post_event_rain_coverage_pct": 100.0,
+      "post_event_rain_total_mm": 16.2,
+      "water_event_start": "2025-11-21",
+      "water_event_end": "2025-11-27",
+      "water_event_valid_observations": 1006,
+      "water_event_coverage_pct": 99.8015873015873,
+      "peak_water_level": 2.12,
+      "peak_water_datetime": "2025-11-26 01:50:00",
+      "dec1_water_level_median": 0.92,
+      "dec1_water_level_coverage_pct": 100.0
+    },
+    {
+      "station_code": "SLA001",
+      "station_name": "หาดใหญ่",
+      "latitude": 6.9801416,
+      "longitude": 100.46324,
+      "rain_event_start": "2025-11-21",
+      "rain_event_end": "2025-11-25",
+      "rain_event_valid_days": 3,
+      "rain_event_coverage_pct": 60.0,
+      "rain_event_total_mm": null,
+      "peak_daily_rainfall_mm": 266.0,
+      "peak_daily_rainfall_date": "2025-11-21",
+      "post_event_rain_valid_days": 4,
+      "post_event_rain_coverage_pct": 80.0,
+      "post_event_rain_total_mm": null,
+      "water_event_start": "2025-11-21",
+      "water_event_end": "2025-11-27",
+      "water_event_valid_observations": 495,
+      "water_event_coverage_pct": 49.10714285714285,
+      "peak_water_level": 9.84,
+      "peak_water_datetime": "2025-11-24 05:50:00",
+      "dec1_water_level_median": 3.92,
+      "dec1_water_level_coverage_pct": 98.61111111111111
+    },
+    {
+      "station_code": "SLA002",
+      "station_name": "คลองหอยโข่ง",
+      "latitude": 6.9312353,
+      "longitude": 100.43985,
+      "rain_event_start": "2025-11-21",
+      "rain_event_end": "2025-11-25",
+      "rain_event_valid_days": 2,
+      "rain_event_coverage_pct": 40.0,
+      "rain_event_total_mm": null,
+      "peak_daily_rainfall_mm": 211.8,
+      "peak_daily_rainfall_date": "2025-11-24",
+      "post_event_rain_valid_days": 4,
+      "post_event_rain_coverage_pct": 80.0,
+      "post_event_rain_total_mm": null,
+      "water_event_start": "2025-11-21",
+      "water_event_end": "2025-11-27",
+      "water_event_valid_observations": 311,
+      "water_event_coverage_pct": 30.853174603174605,
+      "peak_water_level": 12.27,
+      "peak_water_datetime": "2025-11-25 00:50:00",
+      "dec1_water_level_median": 4.61,
+      "dec1_water_level_coverage_pct": 99.30555555555556
+    },
+    {
+      "station_code": "SLA007",
+      "station_name": "บางกล่ำ",
+      "latitude": 7.079437,
+      "longitude": 100.42788,
+      "rain_event_start": "2025-11-21",
+      "rain_event_end": "2025-11-25",
+      "rain_event_valid_days": 5,
+      "rain_event_coverage_pct": 100.0,
+      "rain_event_total_mm": 682.6,
+      "peak_daily_rainfall_mm": 196.4,
+      "peak_daily_rainfall_date": "2025-11-24",
+      "post_event_rain_valid_days": 5,
+      "post_event_rain_coverage_pct": 100.0,
+      "post_event_rain_total_mm": 15.4,
+      "water_event_start": "2025-11-21",
+      "water_event_end": "2025-11-27",
+      "water_event_valid_observations": 731,
+      "water_event_coverage_pct": 72.51984126984127,
+      "peak_water_level": 3.11,
+      "peak_water_datetime": "2025-11-26 05:00:00",
+      "dec1_water_level_median": 1.06,
+      "dec1_water_level_coverage_pct": 100.0
+    }
+  ],
+  "hydro_daily": {
+    "start": "2025-11-18",
+    "end": "2025-12-01",
+    "rainfall": [
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-18",
+        "rainfall_daily": 26.6,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-19",
+        "rainfall_daily": 188.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-20",
+        "rainfall_daily": 67.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-21",
+        "rainfall_daily": 165.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-22",
+        "rainfall_daily": 61.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-23",
+        "rainfall_daily": 106.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-24",
+        "rainfall_daily": 359.6,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-25",
+        "rainfall_daily": 197.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-26",
+        "rainfall_daily": 16.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-27",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-28",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-29",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-30",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-12-01",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-18",
+        "rainfall_daily": 15.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-19",
+        "rainfall_daily": 124.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-20",
+        "rainfall_daily": 46.6,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-21",
+        "rainfall_daily": 129.6,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-22",
+        "rainfall_daily": 53.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-23",
+        "rainfall_daily": 87.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-24",
+        "rainfall_daily": 294.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-25",
+        "rainfall_daily": 203.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-26",
+        "rainfall_daily": 13.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-27",
+        "rainfall_daily": 3.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-28",
+        "rainfall_daily": 0.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-29",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-30",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-12-01",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-18",
+        "rainfall_daily": 2.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-19",
+        "rainfall_daily": 129.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-20",
+        "rainfall_daily": 51.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-21",
+        "rainfall_daily": 266.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-22",
+        "rainfall_daily": 95.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-23",
+        "rainfall_daily": 77.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-24",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-25",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-26",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-27",
+        "rainfall_daily": 3.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-28",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-29",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-30",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-12-01",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-18",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-19",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-20",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-21",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-22",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-23",
+        "rainfall_daily": 99.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-24",
+        "rainfall_daily": 211.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-25",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-26",
+        "rainfall_daily": null,
+        "quality_flag": null
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-27",
+        "rainfall_daily": 4.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-28",
+        "rainfall_daily": 0.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-29",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-30",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-12-01",
+        "rainfall_daily": 0.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-18",
+        "rainfall_daily": 5.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-19",
+        "rainfall_daily": 155.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-20",
+        "rainfall_daily": 40.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-21",
+        "rainfall_daily": 157.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-22",
+        "rainfall_daily": 103.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-23",
+        "rainfall_daily": 91.6,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-24",
+        "rainfall_daily": 196.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-25",
+        "rainfall_daily": 133.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-26",
+        "rainfall_daily": 14.8,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-27",
+        "rainfall_daily": 0.4,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-28",
+        "rainfall_daily": 0.2,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-29",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-30",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-12-01",
+        "rainfall_daily": 0.0,
+        "quality_flag": "N"
+      }
+    ],
+    "waterlevel": [
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-18",
+        "water_level_median": 0.53,
+        "water_level_max": 0.68,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-19",
+        "water_level_median": 0.72,
+        "water_level_max": 0.88,
+        "coverage_pct": 95.13888888888889
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-20",
+        "water_level_median": 0.91,
+        "water_level_max": 1.07,
+        "coverage_pct": 95.83333333333331
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-21",
+        "water_level_median": 1.13,
+        "water_level_max": 1.26,
+        "coverage_pct": 95.13888888888889
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-22",
+        "water_level_median": 1.55,
+        "water_level_max": 1.65,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-23",
+        "water_level_median": 1.725,
+        "water_level_max": 1.82,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-24",
+        "water_level_median": 1.95,
+        "water_level_max": 2.19,
+        "coverage_pct": 95.13888888888889
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-25",
+        "water_level_median": 2.465,
+        "water_level_max": 3.23,
+        "coverage_pct": 87.5
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-26",
+        "water_level_median": 2.52,
+        "water_level_max": 2.61,
+        "coverage_pct": 92.36111111111111
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-27",
+        "water_level_median": 2.21,
+        "water_level_max": 2.39,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-28",
+        "water_level_median": 1.845,
+        "water_level_max": 2.04,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-29",
+        "water_level_median": 1.52,
+        "water_level_max": 1.71,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-11-30",
+        "water_level_median": 1.24,
+        "water_level_max": 1.4,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE037",
+        "date": "2025-12-01",
+        "water_level_median": 1.09,
+        "water_level_max": 1.18,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-18",
+        "water_level_median": 0.52,
+        "water_level_max": 0.7,
+        "coverage_pct": 98.61111111111111
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-19",
+        "water_level_median": 0.69,
+        "water_level_max": 0.89,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-20",
+        "water_level_median": 0.8,
+        "water_level_max": 0.94,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-21",
+        "water_level_median": 0.97,
+        "water_level_max": 1.13,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-22",
+        "water_level_median": 1.16,
+        "water_level_max": 1.28,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-23",
+        "water_level_median": 1.35,
+        "water_level_max": 1.47,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-24",
+        "water_level_median": 1.535,
+        "water_level_max": 1.68,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-25",
+        "water_level_median": 1.86,
+        "water_level_max": 2.07,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-26",
+        "water_level_median": 2.07,
+        "water_level_max": 2.12,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-27",
+        "water_level_median": 1.84,
+        "water_level_max": 2.02,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-28",
+        "water_level_median": 1.54,
+        "water_level_max": 1.71,
+        "coverage_pct": 98.61111111111111
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-29",
+        "water_level_median": 1.24,
+        "water_level_max": 1.42,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-11-30",
+        "water_level_median": 1.0,
+        "water_level_max": 1.11,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "ONE038",
+        "date": "2025-12-01",
+        "water_level_median": 0.92,
+        "water_level_max": 0.99,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-18",
+        "water_level_median": 2.65,
+        "water_level_max": 2.75,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-19",
+        "water_level_median": 2.52,
+        "water_level_max": 2.87,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-20",
+        "water_level_median": 3.16,
+        "water_level_max": 3.71,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-21",
+        "water_level_median": 4.395,
+        "water_level_max": 6.44,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-22",
+        "water_level_median": 8.78,
+        "water_level_max": 9.3,
+        "coverage_pct": 95.83333333333331
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-23",
+        "water_level_median": 8.965,
+        "water_level_max": 9.28,
+        "coverage_pct": 94.44444444444444
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-24",
+        "water_level_median": 9.61,
+        "water_level_max": 9.84,
+        "coverage_pct": 25.694444444444443
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-25",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-26",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-27",
+        "water_level_median": 8.145,
+        "water_level_max": 8.38,
+        "coverage_pct": 27.77777777777778
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-28",
+        "water_level_median": 7.02,
+        "water_level_max": 7.9,
+        "coverage_pct": 95.83333333333331
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-29",
+        "water_level_median": 5.045,
+        "water_level_max": 6.01,
+        "coverage_pct": 98.61111111111111
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-11-30",
+        "water_level_median": 3.85,
+        "water_level_max": 4.43,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA001",
+        "date": "2025-12-01",
+        "water_level_median": 3.92,
+        "water_level_max": 4.18,
+        "coverage_pct": 98.61111111111111
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-18",
+        "water_level_median": 2.41,
+        "water_level_max": 2.43,
+        "coverage_pct": 22.916666666666668
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-19",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-20",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-21",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-22",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-23",
+        "water_level_median": 9.96,
+        "water_level_max": 10.9,
+        "coverage_pct": 59.02777777777778
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-24",
+        "water_level_median": 11.56,
+        "water_level_max": 12.26,
+        "coverage_pct": 98.61111111111111
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-25",
+        "water_level_median": 12.27,
+        "water_level_max": 12.27,
+        "coverage_pct": 13.194444444444445
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-26",
+        "water_level_median": null,
+        "water_level_max": null,
+        "coverage_pct": 0.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-27",
+        "water_level_median": 9.55,
+        "water_level_max": 9.74,
+        "coverage_pct": 45.138888888888886
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-28",
+        "water_level_median": 8.754999999999999,
+        "water_level_max": 9.33,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-29",
+        "water_level_median": 7.41,
+        "water_level_max": 8.04,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-11-30",
+        "water_level_median": 5.78,
+        "water_level_max": 6.68,
+        "coverage_pct": 97.91666666666669
+      },
+      {
+        "station_code": "SLA002",
+        "date": "2025-12-01",
+        "water_level_median": 4.61,
+        "water_level_max": 4.93,
+        "coverage_pct": 99.30555555555556
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-18",
+        "water_level_median": 0.485,
+        "water_level_max": 0.64,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-19",
+        "water_level_median": 0.69,
+        "water_level_max": 0.88,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-20",
+        "water_level_median": 1.15,
+        "water_level_max": 1.2,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-21",
+        "water_level_median": 1.225,
+        "water_level_max": 1.7,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-22",
+        "water_level_median": 2.2350000000000003,
+        "water_level_max": 2.58,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-23",
+        "water_level_median": 2.03,
+        "water_level_max": 2.39,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-24",
+        "water_level_median": 2.155,
+        "water_level_max": 2.86,
+        "coverage_pct": 93.05555555555556
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-25",
+        "water_level_median": 3.02,
+        "water_level_max": 3.06,
+        "coverage_pct": 45.833333333333336
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-26",
+        "water_level_median": 3.01,
+        "water_level_max": 3.11,
+        "coverage_pct": 28.47222222222222
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-27",
+        "water_level_median": 2.3,
+        "water_level_max": 2.63,
+        "coverage_pct": 40.27777777777778
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-28",
+        "water_level_median": 1.85,
+        "water_level_max": 2.12,
+        "coverage_pct": 83.33333333333333
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-29",
+        "water_level_median": 1.52,
+        "water_level_max": 1.71,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-11-30",
+        "water_level_median": 1.22,
+        "water_level_max": 1.38,
+        "coverage_pct": 100.0
+      },
+      {
+        "station_code": "SLA007",
+        "date": "2025-12-01",
+        "water_level_median": 1.06,
+        "water_level_max": 1.15,
+        "coverage_pct": 100.0
+      }
+    ]
+  }
+}
