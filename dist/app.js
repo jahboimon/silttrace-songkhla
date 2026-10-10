@@ -6,6 +6,9 @@ let selectedLayer = "ndti";
 let rasterOverlay;
 let chart;
 let data;
+let selectedStation = "ONE037";
+let stationLayer;
+const stationMarkers = new Map();
 
 const map = L.map("map", { zoomControl: false, attributionControl: true });
 L.control.zoom({ position: "topright" }).addTo(map);
@@ -28,6 +31,48 @@ function rowsForDate(date) {
 function formatIndex(value) {
   const number = Number(value);
   return `${number >= 0 ? "+" : ""}${number.toFixed(3)}`;
+}
+
+function formatMetric(value, digits = 1) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(digits) : null;
+}
+
+function hydroRow() {
+  return data.hydro.find((row) => String(row.acquisition_date).replaceAll("-", "") === selectedDate && row.station_code === selectedStation);
+}
+
+function metricCard(label, value, unit, coverage) {
+  const display = formatMetric(value);
+  const complete = display !== null;
+  return `<article class="hydro-metric ${complete ? "" : "missing"}">
+    <span>${label}</span>
+    <strong>${complete ? display : "ข้อมูลไม่ครบ"}</strong>
+    <small>${complete ? unit : `coverage ${formatMetric(coverage, 0) ?? 0}%`}</small>
+  </article>`;
+}
+
+function updateHydro() {
+  const row = hydroRow();
+  if (!row) return;
+  document.getElementById("hydro-metrics").innerHTML = [
+    metricCard("ฝนสะสม 1 วัน", row.rainfall_1d_mm, "mm", row.rainfall_1d_coverage_pct),
+    metricCard("ฝนสะสม 3 วัน", row.rainfall_3d_mm, "mm", row.rainfall_3d_coverage_pct),
+    metricCard("ฝนสะสม 7 วัน", row.rainfall_7d_mm, "mm", row.rainfall_7d_coverage_pct),
+    metricCard("ระดับน้ำมัธยฐาน", row.water_level_median, "m", row.water_level_coverage_pct),
+  ].join("");
+  const incompleteRain = [row.rainfall_3d_mm, row.rainfall_7d_mm].some((v) => formatMetric(v) === null);
+  const waterCoverage = Number(row.water_level_coverage_pct);
+  let note = `ข้อมูล ณ ${data.dates[selectedDate].label}`;
+  if (incompleteRain) note += " · ช่วงฝนสะสมก่อนวันถ่ายภาพยังครอบคลุมไม่ครบ";
+  if (formatMetric(row.water_level_median) === null) note += " · ไม่มีข้อมูลระดับน้ำในวันดังกล่าว";
+  else if (waterCoverage < 90) note += ` · ระดับน้ำมี coverage ${waterCoverage.toFixed(0)}%`;
+  document.getElementById("hydro-note").textContent = note;
+
+  stationMarkers.forEach((marker, code) => {
+    marker.getElement()?.classList.toggle("selected", code === selectedStation);
+  });
 }
 
 function updateRaster() {
@@ -62,6 +107,7 @@ function updateSummary() {
   } else {
     document.getElementById("insight-text").textContent = "ช่วงฤดูแล้งค่ามัธยฐานของทั้งสามโซนอยู่ใกล้กัน และยังไม่พบรูปแบบลดหลั่นตามระยะห่างจากปากคลองอย่างเด่นชัด";
   }
+  updateHydro();
 }
 
 function updateButtons() {
@@ -105,9 +151,10 @@ function createChart() {
 }
 
 async function addVectors() {
-  const [zones, outlet] = await Promise.all([
+  const [zones, outlet, stations] = await Promise.all([
     fetch("assets/data/zones.geojson").then((response) => response.json()),
     fetch("assets/data/outlet.geojson").then((response) => response.json()),
+    fetch("assets/data/stations.geojson").then((response) => response.json()),
   ]);
 
   L.geoJSON(zones, {
@@ -129,6 +176,26 @@ async function addVectors() {
       icon: L.divIcon({ className: "outlet-marker", html: "◎", iconAnchor: [14, 14] }),
     }),
   }).bindTooltip("ปากคลองอู่ตะเภา", { direction: "top", offset: [0, -12] }).addTo(map);
+
+  stationLayer = L.geoJSON(stations, {
+    pointToLayer: (feature, latlng) => {
+      const code = feature.properties.station_code;
+      const marker = L.marker(latlng, {
+        icon: L.divIcon({ className: `station-marker ${code === selectedStation ? "selected" : ""}`, html: code.slice(-2), iconAnchor: [12, 12] }),
+      });
+      stationMarkers.set(code, marker);
+      return marker;
+    },
+    onEachFeature: (feature, layer) => {
+      const p = feature.properties;
+      layer.bindTooltip(`<strong>${p.station_code}</strong><br>${p.station_name}`, { direction: "top", offset: [0, -10] });
+      layer.on("click", () => {
+        selectedStation = p.station_code;
+        document.getElementById("station-select").value = selectedStation;
+        updateHydro();
+      });
+    },
+  }).addTo(map);
 }
 
 async function init() {
@@ -138,6 +205,19 @@ async function init() {
   document.getElementById("date-switcher").innerHTML = dateOrder.map((date) => `
     <button data-date="${date}"><strong>${data.dates[date].label}</strong><span>${data.dates[date].stage}</span></button>
   `).join("");
+  const stations = [...new Map(data.hydro.map((row) => [row.station_code, row.station_name])).entries()];
+  document.getElementById("station-select").innerHTML = stations.map(([code, name]) => `<option value="${code}">${code} · ${name}</option>`).join("");
+  document.getElementById("station-select").value = selectedStation;
+  document.getElementById("station-select").addEventListener("change", (event) => {
+    selectedStation = event.target.value;
+    updateHydro();
+  });
+  document.getElementById("station-toggle").addEventListener("click", (event) => {
+    const button = event.currentTarget;
+    const visible = map.hasLayer(stationLayer);
+    if (visible) map.removeLayer(stationLayer); else stationLayer.addTo(map);
+    button.classList.toggle("active", !visible);
+  });
 
   document.getElementById("date-switcher").addEventListener("click", (event) => {
     const button = event.target.closest("button[data-date]");

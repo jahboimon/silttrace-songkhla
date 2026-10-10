@@ -40,6 +40,9 @@
               <button data-layer="ndti" class="active">NDTI</button>
               <button data-layer="uwqv">UWQV</button>
             </div>
+            <button id="station-toggle" class="station-toggle active" type="button">
+              <span></span> สถานี สสน.
+            </button>
           </div>
           <div id="legend" class="legend glass"></div>
           <div class="map-note glass">คลิกโซนเพื่อดูสถิติ · พิกเซลเมฆและคุณภาพต่ำไม่ถูกนำมาวิเคราะห์</div>
@@ -63,6 +66,20 @@
               <span class="unit">INDEX</span>
             </div>
             <div id="zone-cards" class="zone-cards"></div>
+          </section>
+
+          <section class="hydro-card">
+            <div class="section-heading compact">
+              <div>
+                <p class="section-kicker">HYDRO-METEOROLOGICAL CONTEXT</p>
+                <h3>ข้อมูลฝนและระดับน้ำ</h3>
+              </div>
+              <span class="unit">สสน.</span>
+            </div>
+            <label class="station-select-label" for="station-select">สถานี</label>
+            <select id="station-select" class="station-select"></select>
+            <div id="hydro-metrics" class="hydro-metrics"></div>
+            <p id="hydro-note" class="hydro-note"></p>
           </section>
 
           <section class="chart-card">
