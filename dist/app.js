@@ -43,6 +43,10 @@ function hydroRow() {
   return data.hydro.find((row) => String(row.acquisition_date).replaceAll("-", "") === selectedDate && row.station_code === selectedStation);
 }
 
+function floodEventRow() {
+  return data.flood_event.find((row) => row.station_code === selectedStation);
+}
+
 function metricCard(label, value, unit, coverage) {
   const display = formatMetric(value);
   const complete = display !== null;
@@ -56,18 +60,37 @@ function metricCard(label, value, unit, coverage) {
 function updateHydro() {
   const row = hydroRow();
   if (!row) return;
-  document.getElementById("hydro-metrics").innerHTML = [
-    metricCard("ฝนสะสม 1 วัน", row.rainfall_1d_mm, "mm", row.rainfall_1d_coverage_pct),
-    metricCard("ฝนสะสม 3 วัน", row.rainfall_3d_mm, "mm", row.rainfall_3d_coverage_pct),
-    metricCard("ฝนสะสม 7 วัน", row.rainfall_7d_mm, "mm", row.rainfall_7d_coverage_pct),
-    metricCard("ระดับน้ำมัธยฐาน", row.water_level_median, "m", row.water_level_coverage_pct),
-  ].join("");
-  const incompleteRain = [row.rainfall_3d_mm, row.rainfall_7d_mm].some((v) => formatMetric(v) === null);
-  const waterCoverage = Number(row.water_level_coverage_pct);
-  let note = `ข้อมูล ณ ${data.dates[selectedDate].label}`;
-  if (incompleteRain) note += " · ช่วงฝนสะสมก่อนวันถ่ายภาพยังครอบคลุมไม่ครบ";
-  if (formatMetric(row.water_level_median) === null) note += " · ไม่มีข้อมูลระดับน้ำในวันดังกล่าว";
-  else if (waterCoverage < 90) note += ` · ระดับน้ำมี coverage ${waterCoverage.toFixed(0)}%`;
+  let cards;
+  let note;
+  if (selectedDate === "20251201") {
+    const event = floodEventRow();
+    cards = [
+      metricCard("ฝนรวม 21–25 พ.ย.", event.rain_event_total_mm, "mm", event.rain_event_coverage_pct),
+      metricCard("ฝนสูงสุดรายวัน", event.peak_daily_rainfall_mm, "mm", event.rain_event_coverage_pct),
+      metricCard("ระดับน้ำสูงสุด 21–27 พ.ย.", event.peak_water_level, "m", event.water_event_coverage_pct),
+      metricCard("ระดับน้ำวันที่ 1 ธ.ค.", event.dec1_water_level_median, "m", event.dec1_water_level_coverage_pct),
+    ];
+    const peakRainDate = event.peak_daily_rainfall_date ? String(event.peak_daily_rainfall_date).slice(0, 10) : "ไม่ทราบวัน";
+    const peakWaterTime = event.peak_water_datetime ? String(event.peak_water_datetime).slice(0, 16).replace("T", " ") : "ไม่ทราบเวลา";
+    note = `เหตุการณ์ฝน 21–25 พ.ย. · ฝนสูงสุด ${peakRainDate} · ระดับน้ำสูงสุด ${peakWaterTime}`;
+    if (Number(event.rain_event_coverage_pct) < 100 || Number(event.water_event_coverage_pct) < 90) {
+      note += ` · coverage ฝน ${formatMetric(event.rain_event_coverage_pct, 0)}% / ระดับน้ำ ${formatMetric(event.water_event_coverage_pct, 0)}%`;
+    }
+  } else {
+    cards = [
+      metricCard("ฝนสะสม 1 วัน", row.rainfall_1d_mm, "mm", row.rainfall_1d_coverage_pct),
+      metricCard("ฝนสะสม 3 วัน", row.rainfall_3d_mm, "mm", row.rainfall_3d_coverage_pct),
+      metricCard("ฝนสะสม 7 วัน", row.rainfall_7d_mm, "mm", row.rainfall_7d_coverage_pct),
+      metricCard("ระดับน้ำมัธยฐาน", row.water_level_median, "m", row.water_level_coverage_pct),
+    ];
+    const incompleteRain = [row.rainfall_3d_mm, row.rainfall_7d_mm].some((v) => formatMetric(v) === null);
+    const waterCoverage = Number(row.water_level_coverage_pct);
+    note = `ข้อมูล ณ ${data.dates[selectedDate].label}`;
+    if (incompleteRain) note += " · ช่วงฝนสะสมก่อนวันถ่ายภาพยังครอบคลุมไม่ครบ";
+    if (formatMetric(row.water_level_median) === null) note += " · ไม่มีข้อมูลระดับน้ำในวันดังกล่าว";
+    else if (waterCoverage < 90) note += ` · ระดับน้ำมี coverage ${waterCoverage.toFixed(0)}%`;
+  }
+  document.getElementById("hydro-metrics").innerHTML = cards.join("");
   document.getElementById("hydro-note").textContent = note;
 
   stationMarkers.forEach((marker, code) => {
