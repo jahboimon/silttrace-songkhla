@@ -71,7 +71,7 @@ main { flex: 1; min-height: calc(100vh - 88px); display: grid; grid-template-col
 .station-toggle span { display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: #9aa8b2; }
 .station-toggle.active { border-color: #265f97; color: #173e68; background: #edf6ff; }
 .station-toggle.active span { background: #2f83c4; box-shadow: 0 0 0 3px rgba(47,131,196,.14); }
-.legend { position: absolute; z-index: 800; left: 20px; bottom: 45px; min-width: 206px; padding: 12px 14px; border-radius: 12px; }
+.legend { position: absolute; z-index: 800; right: 20px; bottom: 58px; min-width: 206px; padding: 12px 14px; border-radius: 12px; }
 .legend-title { margin-bottom: 7px; font-size: 11px; font-weight: 700; }
 .gradient { width: 180px; height: 8px; border-radius: 8px; background: linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026); }
 .legend-labels { display: flex; justify-content: space-between; margin-top: 4px; color: var(--muted); font-size: 9px; }
@@ -121,6 +121,10 @@ footer { margin-top: auto; display: flex; justify-content: space-between; color:
 .outlet-marker { display: grid; place-items: center; width: 28px !important; height: 28px !important; border: 3px solid white; border-radius: 50%; background: var(--sand); box-shadow: 0 6px 18px rgba(0,0,0,.28); color: white; font-weight: 700; }
 .station-marker { display: grid; place-items: center; width: 24px !important; height: 24px !important; border: 3px solid white; border-radius: 50%; background: #2f83c4; box-shadow: 0 5px 14px rgba(11,31,51,.28); color: white; font: 700 9px "Space Grotesk",sans-serif; }
 .station-marker.selected { background: #071b2d; box-shadow: 0 0 0 4px rgba(95,212,223,.4),0 5px 14px rgba(11,31,51,.28); }
+.pixel-tooltip { padding: 8px 10px !important; border: 0 !important; border-radius: 9px !important; box-shadow: 0 8px 28px rgba(11,31,51,.22) !important; color: var(--ink); }
+.pixel-tooltip::before { border-top-color: white !important; }
+.pixel-tooltip span { display: block; color: var(--muted); font-size: 9px; }
+.pixel-tooltip strong { display: block; margin-top: 2px; font: 600 13px "Space Grotesk",sans-serif; }
 
 @media (max-width: 980px) {
   .topbar { height: auto; min-height: 78px; grid-template-columns: 1fr auto; padding: 14px 18px; }
@@ -133,7 +137,7 @@ footer { margin-top: auto; display: flex; justify-content: space-between; color:
 @media (max-width: 560px) {
   .status { display: none; }
   .map-toolbar { left: 10px; top: 10px; width: 185px; }
-  .legend { left: 10px; bottom: 10px; }
+  .legend { right: 10px; bottom: 10px; min-width: 185px; }
   .map-note { display: none; }
   .side-panel { padding: 20px 15px; }
   .hydro-metrics { grid-template-columns: repeat(2,1fr); }

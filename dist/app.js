@@ -10,8 +10,18 @@ let data;
 let selectedStation = "ONE037";
 let stationLayer;
 const stationMarkers = new Map();
+const ndtiLookupCache = new Map();
+let activeNdtiLookup = null;
+let pendingPointerEvent = null;
+let pointerFrame = null;
 
 const map = L.map("map", { zoomControl: false, attributionControl: true });
+const pixelTooltip = L.tooltip({
+  direction: "top",
+  offset: [0, -12],
+  opacity: 0.96,
+  className: "pixel-tooltip",
+});
 L.control.zoom({ position: "topright" }).addTo(map);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
@@ -212,6 +222,70 @@ function createHydroChart() {
   updateHydroChart();
 }
 
+function loadNdtiLookup(date) {
+  if (ndtiLookupCache.has(date)) {
+    activeNdtiLookup = ndtiLookupCache.get(date);
+    return Promise.resolve(activeNdtiLookup);
+  }
+
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      const context = canvas.getContext("2d", { willReadFrequently: true });
+      context.drawImage(image, 0, 0);
+      const lookup = { date, width: canvas.width, height: canvas.height, context };
+      ndtiLookupCache.set(date, lookup);
+      if (selectedDate === date) activeNdtiLookup = lookup;
+      resolve(lookup);
+    };
+    image.onerror = reject;
+    image.src = data.layers[date].ndti_values;
+  });
+}
+
+function sampleNdti(latlng) {
+  if (selectedLayer !== "ndti" || !activeNdtiLookup || activeNdtiLookup.date !== selectedDate) return null;
+  const [[south, west], [north, east]] = data.bounds;
+  if (latlng.lat < south || latlng.lat > north || latlng.lng < west || latlng.lng > east) return null;
+
+  const x = Math.min(activeNdtiLookup.width - 1, Math.max(0,
+    Math.floor(((latlng.lng - west) / (east - west)) * activeNdtiLookup.width)
+  ));
+  const y = Math.min(activeNdtiLookup.height - 1, Math.max(0,
+    Math.floor(((north - latlng.lat) / (north - south)) * activeNdtiLookup.height)
+  ));
+  const [red, green, blue, alpha] = activeNdtiLookup.context.getImageData(x, y, 1, 1).data;
+  const code = (red << 16) | (green << 8) | blue;
+  if (alpha === 0 || code === 0) return null;
+  return (((code - 1) / 16_777_213) * 2) - 1;
+}
+
+function showPixelValue(event) {
+  const value = sampleNdti(event.latlng);
+  if (value === null) {
+    map.closeTooltip(pixelTooltip);
+    return;
+  }
+  pixelTooltip
+    .setLatLng(event.latlng)
+    .setContent(`<span>ค่ารายพิกเซล</span><strong>NDTI ${formatIndex(value)}</strong>`)
+    .addTo(map);
+}
+
+map.on("mousemove", (event) => {
+  pendingPointerEvent = event;
+  if (pointerFrame) return;
+  pointerFrame = requestAnimationFrame(() => {
+    showPixelValue(pendingPointerEvent);
+    pointerFrame = null;
+  });
+});
+map.on("mouseout", () => map.closeTooltip(pixelTooltip));
+map.on("click", showPixelValue);
+
 function updateRaster() {
   if (rasterOverlay) map.removeLayer(rasterOverlay);
   rasterOverlay = L.imageOverlay(data.layers[selectedDate][selectedLayer], data.bounds, {
@@ -220,6 +294,10 @@ function updateRaster() {
   }).addTo(map);
   rasterOverlay.bringToBack();
   document.getElementById("legend").innerHTML = legends[selectedLayer];
+  map.closeTooltip(pixelTooltip);
+  if (selectedLayer === "ndti") {
+    loadNdtiLookup(selectedDate).catch((error) => console.error("Unable to load NDTI values", error));
+  }
 }
 
 function updateSummary() {
@@ -295,6 +373,7 @@ async function addVectors() {
   ]);
 
   L.geoJSON(zones, {
+    interactive: false,
     style: (feature) => ({
       color: zoneColors[feature.properties.zone],
       weight: 2.2,
@@ -302,10 +381,6 @@ async function addVectors() {
       fillColor: zoneColors[feature.properties.zone],
       fillOpacity: 0.025,
     }),
-    onEachFeature: (feature, layer) => {
-      const p = feature.properties;
-      layer.bindTooltip(`<strong>Zone ${p.zone}</strong><br>${p.distance}<br>${Number(p.polygon_km2).toFixed(1)} km²`, { sticky: true });
-    },
   }).addTo(map);
 
   L.geoJSON(outlet, {

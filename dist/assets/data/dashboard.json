@@ -13,16 +13,19 @@
     "20250331": {
       "truecolor": "assets/rasters/truecolor_20250331.png",
       "ndti": "assets/rasters/ndti_20250331.png",
+      "ndti_values": "assets/rasters/ndti_values_20250331.png",
       "uwqv": "assets/rasters/uwqv_20250331.png"
     },
     "20251002": {
       "truecolor": "assets/rasters/truecolor_20251002.png",
       "ndti": "assets/rasters/ndti_20251002.png",
+      "ndti_values": "assets/rasters/ndti_values_20251002.png",
       "uwqv": "assets/rasters/uwqv_20251002.png"
     },
     "20251201": {
       "truecolor": "assets/rasters/truecolor_20251201.png",
       "ndti": "assets/rasters/ndti_20251201.png",
+      "ndti_values": "assets/rasters/ndti_values_20251201.png",
       "uwqv": "assets/rasters/uwqv_20251201.png"
     }
   },
