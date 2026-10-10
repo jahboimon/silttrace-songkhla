@@ -105,6 +105,11 @@ main { flex: 1; min-height: calc(100vh - 88px); display: grid; grid-template-col
 .hydro-note { margin: 9px 0 0; color: #65758a; font-size: 9px; line-height: 1.5; }
 .section-heading.compact { margin-bottom: 4px; }
 .chart-wrap { height: 210px; }
+.chart-divider { height: 1px; margin: 14px 0; background: var(--line); }
+.hydro-chart-heading { align-items: center; margin-bottom: 8px; }
+.station-code-pill { padding: 4px 7px; border-radius: 999px; background: #e9f5f7; color: var(--teal); font: 600 9px "Space Grotesk",sans-serif; }
+.hydro-chart-wrap { height: 225px; }
+.chart-note { margin: 5px 0 0; color: #7d8d99; font-size: 8px; line-height: 1.45; }
 .insight-card { display: grid; grid-template-columns: 35px 1fr; gap: 12px; padding: 15px; background: #071b2d; color: white; border-radius: 14px; }
 .insight-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; color: #071b2d; background: var(--cyan); font-size: 19px; }
 .insight-card .section-kicker { color: var(--cyan); }

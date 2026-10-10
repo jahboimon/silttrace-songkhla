@@ -5,6 +5,7 @@ let selectedDate = "20251201";
 let selectedLayer = "ndti";
 let rasterOverlay;
 let chart;
+let hydroChart;
 let data;
 let selectedStation = "ONE037";
 let stationLayer;
@@ -92,10 +93,123 @@ function updateHydro() {
   }
   document.getElementById("hydro-metrics").innerHTML = cards.join("");
   document.getElementById("hydro-note").textContent = note;
+  document.getElementById("hydro-chart-station").textContent = selectedStation;
+  updateHydroChart();
 
   stationMarkers.forEach((marker, code) => {
     marker.getElement()?.classList.toggle("selected", code === selectedStation);
   });
+}
+
+function eventDates() {
+  const dates = [];
+  const cursor = new Date(`${data.hydro_daily.start}T00:00:00`);
+  const end = new Date(`${data.hydro_daily.end}T00:00:00`);
+  while (cursor <= end) {
+    dates.push(cursor.toISOString().slice(0, 10));
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return dates;
+}
+
+function hydroSeries(stationCode) {
+  const rainByDate = new Map(
+    data.hydro_daily.rainfall
+      .filter((row) => row.station_code === stationCode)
+      .map((row) => [row.date, row.rainfall_daily])
+  );
+  const waterByDate = new Map(
+    data.hydro_daily.waterlevel
+      .filter((row) => row.station_code === stationCode)
+      .map((row) => [row.date, row.water_level_max])
+  );
+  const dates = eventDates();
+  return {
+    dates,
+    rainfall: dates.map((date) => formatMetric(rainByDate.get(date)) === null ? null : Number(rainByDate.get(date))),
+    waterlevel: dates.map((date) => formatMetric(waterByDate.get(date)) === null ? null : Number(waterByDate.get(date))),
+  };
+}
+
+function updateHydroChart() {
+  if (!hydroChart || !data?.hydro_daily) return;
+  const series = hydroSeries(selectedStation);
+  hydroChart.data.labels = series.dates.map((date) => {
+    const [year, month, day] = date.split("-");
+    return `${Number(day)} ${month === "11" ? "พ.ย." : "ธ.ค."}`;
+  });
+  hydroChart.data.datasets[0].data = series.rainfall;
+  hydroChart.data.datasets[0].backgroundColor = series.dates.map((date) =>
+    date >= "2025-11-21" && date <= "2025-11-25" ? "#0b8a91" : "#8edce3"
+  );
+  hydroChart.data.datasets[1].data = series.waterlevel;
+  hydroChart.update();
+}
+
+function createHydroChart() {
+  hydroChart = new Chart(document.getElementById("hydro-chart"), {
+    data: {
+      labels: [],
+      datasets: [
+        {
+          type: "bar",
+          label: "ฝนรายวัน (mm)",
+          data: [],
+          yAxisID: "yRain",
+          borderWidth: 0,
+          borderRadius: 3,
+          barPercentage: 0.72,
+          categoryPercentage: 0.9,
+        },
+        {
+          type: "line",
+          label: "ระดับน้ำสูงสุด (m)",
+          data: [],
+          yAxisID: "yWater",
+          borderColor: "#bf7c43",
+          backgroundColor: "#bf7c43",
+          borderWidth: 2.2,
+          pointRadius: 2.5,
+          pointHoverRadius: 5,
+          spanGaps: false,
+          tension: 0.22,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false, mode: "index" },
+      plugins: {
+        legend: { position: "bottom", labels: { usePointStyle: true, boxWidth: 7, font: { size: 9 } } },
+        tooltip: {
+          callbacks: {
+            label: (context) => context.raw === null
+              ? `${context.dataset.label}: ไม่มีข้อมูล`
+              : `${context.dataset.label}: ${Number(context.raw).toFixed(1)}`,
+          },
+        },
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { autoSkip: true, maxTicksLimit: 7, maxRotation: 0, font: { size: 8 } } },
+        yRain: {
+          beginAtZero: true,
+          position: "left",
+          title: { display: true, text: "ฝน (mm)", font: { size: 8 } },
+          grid: { color: "#e6ecef" },
+          ticks: { font: { size: 8 } },
+        },
+        yWater: {
+          beginAtZero: true,
+          position: "right",
+          title: { display: true, text: "ระดับน้ำ (m)", font: { size: 8 } },
+          grid: { drawOnChartArea: false },
+          ticks: { font: { size: 8 } },
+        },
+      },
+    },
+  });
+  updateHydroChart();
 }
 
 function updateRaster() {
@@ -259,6 +373,7 @@ async function init() {
   updateRaster();
   updateSummary();
   createChart();
+  createHydroChart();
   await addVectors();
 }
 
