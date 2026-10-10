@@ -77,7 +77,7 @@ main { flex: 1; height: calc(100vh - 88px); min-height: 0; overflow: hidden; dis
 .legend-labels { display: flex; justify-content: space-between; margin-top: 4px; color: var(--muted); font-size: 9px; }
 .legend-row { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--muted); font-size: 10px; }
 .swatch { width: 25px; height: 8px; border-radius: 4px; }
-.map-note { position: absolute; z-index: 800; right: 20px; bottom: 20px; padding: 9px 12px; border-radius: 9px; color: var(--muted); font-size: 10px; }
+.map-note { position: absolute; z-index: 800; right: 20px; top: 218px; max-width: 360px; padding: 9px 12px; border-radius: 9px; color: var(--muted); font-size: 10px; }
 
 .side-panel { padding: 25px 25px 17px; background: var(--panel); display: flex; flex-direction: column; gap: 22px; overflow: auto; }
 .date-summary { display: flex; align-items: flex-start; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
